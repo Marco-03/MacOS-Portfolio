@@ -1,6 +1,7 @@
 import {useRef} from "react";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
+import {Draggable} from "gsap/Draggable";
 
 const FONT_WEIGHTS = {
     subtitle: {min: 100, max: 400, default: 100},
@@ -29,7 +30,7 @@ const setupTextHover =  (container, type ) => {
         return gsap.to(letter,
             {duration,
                 ease: "power2.out",
-                fontVariationSettings: `'wght' ${weight}`
+                fontVariationSettings: `'wght' ${weight}`,
             });
     };
     const handleMouseMove = (e) => {
@@ -88,4 +89,5 @@ const Welcome = () => {
         </section>
     )
 }
+
 export default Welcome
